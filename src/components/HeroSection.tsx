@@ -85,36 +85,44 @@ export const HeroSection = () => (
     <div className="absolute inset-0 bg-grid opacity-40" />
     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
 
-    <div className="container relative z-10 py-24 md:py-32 max-w-5xl mx-auto">
+    <div className="container relative z-10 py-16 md:py-24 max-w-5xl mx-auto">
       <div className="grid grid-cols-12 gap-6 md:gap-8 items-center justify-items-center md:justify-items-start">
         <motion.div
-          className="col-span-12 md:col-span-7 text-center md:text-left"
+          className="col-span-12 md:col-span-7 flex flex-col items-center md:items-start"
           initial="hidden"
           animate="visible"
           variants={sectionVariants}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="text-glow-blue font-mono-data text-sm mb-4 tracking-widest uppercase">
-            Creative Producer
-          </p>
-          <h1 className="text-[clamp(3rem,9vw,6rem)] font-black leading-[0.95] mb-6">
-            Дарья
-            <br />
-            <span className="text-glow-green">Тимакова</span>
-          </h1>
-          <p className="text-foreground text-base min-[430px]:text-lg md:text-xl max-w-[22rem] md:max-w-[28rem] mx-auto md:mx-0 leading-relaxed mb-4">
-            <span className="font-bold uppercase">Россияне были в шоке,</span>{" "}
-            когда узнали, что мой проект собрал{" "}
-            <span className="text-glow-blue font-bold">59&nbsp;000&nbsp;000</span>{" "}
-            органического трафика.
-          </p>
-          <p className="text-foreground text-base min-[430px]:text-lg md:text-xl max-w-[22rem] md:max-w-[28rem] mx-auto md:mx-0 leading-relaxed">
-            Масштабирую идеи через математический подход и AI-автоматизацию.
-          </p>
+          <div className="w-full max-w-[400px] md:max-w-[480px]">
+            <p className="text-glow-blue font-mono-data text-sm mb-4 tracking-widest uppercase text-center md:text-left">
+              Creative Producer
+            </p>
+            <h1 className="text-[clamp(3rem,9vw,6rem)] font-black leading-[0.95] mb-6 text-center md:text-left">
+              Дарья
+              <br />
+              <span className="text-glow-green">Тимакова</span>
+            </h1>
+
+            <div className="mt-6 text-left w-full max-w-[360px] md:max-w-[480px]">
+              <p className="text-foreground text-base min-[430px]:text-lg md:text-xl leading-relaxed mb-4">
+                <span className="font-bold uppercase">СДЕЛАЛА ЭТО НА ГЛАЗАХ У ВСЕЙ КОМАНДЫ И НЕ ПОКРАСНЕЛА…</span>{" "}
+                сократила время на продакшн на <span className="text-glow-green font-bold">25%</span> с помощью AI и Data-Driven подхода.
+              </p>
+              <p className="text-foreground text-base min-[430px]:text-lg md:text-xl leading-relaxed mb-4">
+                Теперь мои проекты собирают до{" "}
+                <span className="text-glow-blue font-bold">183&nbsp;000&nbsp;000</span>{" "}
+                просмотров чистой органики.
+              </p>
+              <p className="text-foreground text-base min-[430px]:text-lg md:text-xl leading-relaxed mb-0">
+                Живу созданием вирального контента и знаю всё о «крючках».
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
-          className="col-span-12 md:col-span-5 flex justify-center md:justify-end"
+          className="col-span-12 md:col-span-5 flex justify-center md:justify-end mt-2 md:mt-6 lg:mt-12"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}

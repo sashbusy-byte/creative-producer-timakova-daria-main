@@ -85,7 +85,7 @@ const StarCards = () => (
 
 
 export const DeepDiveCase = () => (
-  <section className="py-20 md:py-32">
+  <section className="py-12 md:py-20">
     <div className="container max-w-5xl mx-auto">
       {/* Main layout: Header + Metrics + STAR cards left, phone right */}
       <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12 justify-center">

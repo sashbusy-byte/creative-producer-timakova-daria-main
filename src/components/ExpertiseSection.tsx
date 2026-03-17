@@ -59,7 +59,7 @@ const pillClasses = (accent: "green" | "blue") =>
     : "bg-accent/10 text-accent border-accent/20 hover:bg-accent/15";
 
 export const ExpertiseSection = () => (
-  <section className="py-20 md:py-32">
+  <section className="py-12 md:py-20">
     <div className="container max-w-5xl mx-auto">
       <motion.div
         initial="hidden"

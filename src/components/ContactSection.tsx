@@ -27,7 +27,7 @@ async function copyToClipboard(value: string) {
 }
 
 export const ContactSection = () => (
-  <section className="py-20 md:py-32">
+  <section className="py-12 md:py-20">
     <div className="container max-w-2xl">
       <MacOSWindow title="open_comms.sh">
         <motion.div

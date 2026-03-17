@@ -32,15 +32,15 @@ const pillars = [
     tag: "MARKETING FLOW",
     title: "Data-Driven продакшн",
     items: [
-      { tool: "Аналитика трендов", desc: "Инвестиции только в высокий потенциал." },
-      { tool: "Тестирование гипотез", desc: "Ускоренный цикл через ранний отсев." },
-      { tool: "Zero Waste подход", desc: "Исключение нерелевантных итераций и затрат." },
+      { tool: "Анализ трендов", desc: "Инвестиции в потенциал" },
+      { tool: "Тесты гипотез", desc: "Ускоренный отсев" },
+      { tool: "Zero Waste", desc: "Минимум итераций" },
     ],
   },
 ];
 
 export const OptimizationSection = () => (
-  <section className="py-20 md:py-32">
+  <section className="py-12 md:py-20">
     <div className="container max-w-5xl mx-auto">
       <motion.div
         initial="hidden"
