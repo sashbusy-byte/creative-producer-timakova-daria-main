@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import confetti from "canvas-confetti";
 import addToTeamVideo from "@/assets/addtoteam.mp4";
+import addToTeamPoster from "@/assets/addtoteam-poster.png";
 import dariaAvatar from "@/assets/daria-avatar.png";
 
 const POPUP_SHOWN_KEY = "gameAdPopupShown";
@@ -16,6 +17,7 @@ export function GameAdPopup() {
   const [closing, setClosing] = useState(false);
   const [showReplay, setShowReplay] = useState(true);
   const [videoError, setVideoError] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   // Show popup 5 seconds after page load, only once per session
   useEffect(() => {
@@ -92,7 +94,6 @@ export function GameAdPopup() {
       setVisible(false);
       setClosing(false);
       setShowReplay(true);
-      document.getElementById("contacts")?.scrollIntoView({ behavior: "smooth" });
     }, 500);
   }, []);
 
@@ -103,25 +104,34 @@ export function GameAdPopup() {
     setShowCTA(false);
     setVideoEnded(false);
     setVideoError(false);
-    setMuted(true);
+    setMuted(false);
+    setIsPlaying(false);
     sessionStorage.removeItem(POPUP_SHOWN_KEY);
     setVisible(true);
   }, []);
 
+  // Start video manually
+  const handlePlayVideo = useCallback(() => {
+    setIsPlaying(true);
+    setMuted(false);
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => setVideoError(true));
+    }
+  }, []);
+
   // Reset & play video when popup opens
   useEffect(() => {
-    if (visible && videoRef.current && !videoError) {
+    if (visible && videoRef.current && !videoError && !isPlaying) {
       const video = videoRef.current;
       video.currentTime = 0;
-      video.muted = true;
-      video.play().catch(() => setVideoError(true));
+      video.pause();
     }
-  }, [visible, videoError]);
+  }, [visible, videoError, isPlaying]);
 
   // Sync muted state
   useEffect(() => {
     if (videoRef.current) videoRef.current.muted = muted;
-  }, [muted]);
+  }, [muted, visible]);
 
   if (!visible && !showReplay) return null;
 
@@ -183,12 +193,56 @@ export function GameAdPopup() {
               <video
                 ref={videoRef}
                 src={addToTeamVideo}
+                poster={addToTeamPoster}
                 playsInline
-                autoPlay
-                muted
+                muted={muted}
                 preload="auto"
                 style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
               />
+            )}
+
+            {/* Play Button Overlay */}
+            {!isPlaying && !videoError && (
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  background: "rgba(0,0,0,0.3)",
+                  zIndex: 25,
+                }}
+              >
+                <button
+                  onClick={handlePlayVideo}
+                  style={{
+                    padding: "20px 40px",
+                    background: "#22c55e",
+                    border: "4px solid #16a34a",
+                    borderRadius: "16px",
+                    cursor: "pointer",
+                    fontSize: "32px",
+                    fontWeight: 900,
+                    color: "#fff",
+                    fontFamily: "'Impact', 'Arial Black', sans-serif",
+                    letterSpacing: "4px",
+                    boxShadow: "0 10px 30px rgba(34,197,94,0.6)",
+                    textTransform: "uppercase",
+                    transform: "scale(1)",
+                    transition: "transform 0.2s, background 0.2s",
+                    animation: "pulsePlay 1.5s infinite",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "#16a34a";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "#22c55e";
+                  }}
+                >
+                  PLAY
+                </button>
+              </div>
             )}
 
             {/* Mute button */}
@@ -463,6 +517,11 @@ export function GameAdPopup() {
         @keyframes slideInRight {
           from { opacity: 0; transform: translateX(80px); }
           to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes pulsePlay {
+          0% { transform: scale(1); box-shadow: 0 10px 30px rgba(34,197,94,0.6); }
+          50% { transform: scale(1.05); box-shadow: 0 15px 40px rgba(34,197,94,0.8); }
+          100% { transform: scale(1); box-shadow: 0 10px 30px rgba(34,197,94,0.6); }
         }
         @keyframes pulse {
           0%, 100% { opacity: 0.45; }
