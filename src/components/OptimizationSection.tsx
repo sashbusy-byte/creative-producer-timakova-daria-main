@@ -29,11 +29,12 @@ const pillars = [
   },
   {
     icon: GitBranch,
-    tag: "Pipeline",
-    title: "Параллельные процессы",
+    tag: "MARKETING FLOW",
+    title: "Data-Driven продакшн",
     items: [
-      { tool: "Конвейер", desc: "Монтаж → анимация → препрод одновременно" },
-      { tool: "Результат", desc: "−25% времени на производство" },
+      { tool: "Аналитика трендов", desc: "Инвестиции только в высокий потенциал." },
+      { tool: "Тестирование гипотез", desc: "Ускоренный цикл через ранний отсев." },
+      { tool: "Zero Waste подход", desc: "Исключение нерелевантных итераций и затрат." },
     ],
   },
 ];
@@ -82,9 +83,9 @@ export const OptimizationSection = () => (
 
             <div className="space-y-4 flex-1">
               {pillar.items.map((item) => (
-                <div key={item.tool} className="border-l-2 border-accent/20 pl-3">
-                  <p className="text-foreground font-semibold text-base">{item.tool}</p>
-                  <p className="text-muted-foreground text-sm">{item.desc}</p>
+                <div key={item.tool} className="border-l-2 border-accent/20 pl-4 py-0.5">
+                  <p className="text-foreground font-semibold text-base mb-1.5 leading-tight">{item.tool}</p>
+                  <p className="text-muted-foreground text-sm leading-snug opacity-90">{item.desc}</p>
                 </div>
               ))}
             </div>

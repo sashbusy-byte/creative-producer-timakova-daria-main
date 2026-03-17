@@ -69,13 +69,9 @@ export const ExpertiseSection = () => (
         className="mb-12 max-w-3xl"
       >
         <p className="text-accent font-mono-data text-sm mb-2 tracking-widest uppercase">Expertise</p>
-        <h2 className="text-3xl md:text-5xl font-black mb-4">
+        <h2 className="text-3xl md:text-5xl font-black mb-4 md:mb-8">
           Expertise &amp; <span className="text-glow-green">Stack</span>
         </h2>
-        <p className="text-secondary-foreground text-lg leading-relaxed">
-          Метрики, механики и инструменты, которые помогают собирать креативы под GameDev: от стратегии и разборов — к
-          продакшну и масштабированию.
-        </p>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

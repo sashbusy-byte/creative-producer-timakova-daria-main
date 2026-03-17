@@ -19,7 +19,7 @@ const metrics = [
 const cards = [
   {
     title: "Situation",
-    text: "Клиент — PolyBuzz (AI-чат с персонажами). Цель: нативная интеграция для привлечения пользователей на YouTube-канале.",
+    text: "Клиент — PolyBuzz (AI-чат с персонажами). Цель: User Acquisition — нативная интеграция для масштабирования базы пользователей.",
   },
   {
     title: "Task",
@@ -143,7 +143,7 @@ export const DeepDiveCase = () => (
           </div>
           <div className="bg-primary/15 border border-primary/20 rounded-2xl rounded-bl-sm px-4 py-3">
             <p className="text-sm text-foreground leading-relaxed">
-              Команда и заказчик сомневались в теме «похорон» — казалось слишком рискованно. Я собрала аналитику: бенчмарки, примеры успешных видео, комментарии аудитории без негатива — и убедила дать проекту зелёный свет.
+              Команда и заказчик сомневались в теме «похорон». Я собрала аналитику: бенчмарки, примеры успешных видео, комментарии аудитории без негатива — и убедила дать проекту зелёный свет.
             </p>
           </div>
           <span className="text-[10px] text-muted-foreground font-mono-data mt-1 block ml-1">delivered ✓✓</span>

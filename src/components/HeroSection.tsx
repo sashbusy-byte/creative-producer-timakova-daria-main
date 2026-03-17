@@ -94,7 +94,7 @@ export const HeroSection = () => (
           variants={sectionVariants}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="text-accent font-mono-data text-sm mb-4 tracking-widest uppercase">
+          <p className="text-glow-blue font-mono-data text-sm mb-4 tracking-widest uppercase">
             Creative Producer
           </p>
           <h1 className="text-[clamp(3rem,9vw,6rem)] font-black leading-[0.95] mb-6">
@@ -102,9 +102,14 @@ export const HeroSection = () => (
             <br />
             <span className="text-glow-green">Тимакова</span>
           </h1>
-          <p className="text-secondary-foreground text-base min-[430px]:text-lg md:text-xl max-w-[22rem] md:max-w-[28rem] mx-auto md:mx-0 leading-relaxed">
-            Креативный продюсер, декомпозирующий успех контента. Переношу экспертизу в работе с retention и AI-инструментами
-            из YouTube-продакшна в GameDev-креативы. Специалист по «крючкам» и активный игрок в мобилки.
+          <p className="text-foreground text-base min-[430px]:text-lg md:text-xl max-w-[22rem] md:max-w-[28rem] mx-auto md:mx-0 leading-relaxed mb-4">
+            <span className="font-bold uppercase">Россияне были в шоке,</span>{" "}
+            когда узнали, что мой проект собрал{" "}
+            <span className="text-glow-blue font-bold">59&nbsp;000&nbsp;000</span>{" "}
+            органического трафика без вложений.
+          </p>
+          <p className="text-foreground text-base min-[430px]:text-lg md:text-xl max-w-[22rem] md:max-w-[28rem] mx-auto md:mx-0 leading-relaxed">
+            Масштабирую идеи через математический подход и AI-автоматизацию.
           </p>
         </motion.div>
 
