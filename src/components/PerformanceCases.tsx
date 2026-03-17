@@ -40,7 +40,7 @@ const cases: CaseData[] = [
     metrics: [{ label: "Views", value: "72.2M" }, { label: "Retention", value: "82.7%" }, { label: "AVD", value: "177.5%" }],
   },
   {
-    title: "BlockBlast × «Игра в Кальмара»",
+    title: "BlockBlast Ad Integration",
     thumbnail: "https://img.youtube.com/vi/BEPJLyLDo0g/hq720.jpg",
     videoUrl: "https://www.youtube.com/watch?v=BEPJLyLDo0g",
     metrics: [{ label: "Views", value: "6.8M" }, { label: "Retention", value: "77%" }, { label: "AVD", value: "91%" }],

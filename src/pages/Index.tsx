@@ -5,10 +5,12 @@ import { DeepDiveCase } from "@/components/DeepDiveCase";
 import { OptimizationSection } from "@/components/OptimizationSection";
 import { ExpertiseSection } from "@/components/ExpertiseSection";
 import { ContactSection } from "@/components/ContactSection";
+import { GameAdPopup } from "@/components/GameAdPopup";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <GameAdPopup />
       <Navbar />
       <HeroSection />
       <div id="showreel" className="scroll-mt-20 md:scroll-mt-24"><PerformanceCases /></div>

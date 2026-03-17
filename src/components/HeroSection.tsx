@@ -106,7 +106,7 @@ export const HeroSection = () => (
             <span className="font-bold uppercase">Россияне были в шоке,</span>{" "}
             когда узнали, что мой проект собрал{" "}
             <span className="text-glow-blue font-bold">59&nbsp;000&nbsp;000</span>{" "}
-            органического трафика без вложений.
+            органического трафика.
           </p>
           <p className="text-foreground text-base min-[430px]:text-lg md:text-xl max-w-[22rem] md:max-w-[28rem] mx-auto md:mx-0 leading-relaxed">
             Масштабирую идеи через математический подход и AI-автоматизацию.
