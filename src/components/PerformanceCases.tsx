@@ -34,7 +34,7 @@ const cases: CaseData[] = [
     metrics: [{ label: "Views", value: "133M" }, { label: "Retention", value: "78.6%" }, { label: "AVD", value: "184%" }],
   },
   {
-    title: "Hype-Themed Video",
+    title: "FaceMoji Native Ad Integration",
     thumbnail: "https://img.youtube.com/vi/As7_NzD50KA/hq720.jpg",
     videoUrl: "https://www.youtube.com/watch?v=As7_NzD50KA",
     metrics: [{ label: "Views", value: "58M" }],
@@ -52,13 +52,13 @@ const cases: CaseData[] = [
     metrics: [{ label: "Views", value: "70M" }, { label: "Retention", value: "75%" }, { label: "AVD", value: "417%" }],
   },
   {
-    title: "BlockBlast Ad Integration",
+    title: "BlockBlast Native Ad Integration",
     thumbnail: "https://img.youtube.com/vi/BEPJLyLDo0g/hq720.jpg",
     videoUrl: "https://www.youtube.com/watch?v=BEPJLyLDo0g",
     metrics: [{ label: "Views", value: "6.8M" }, { label: "Retention", value: "77%" }, { label: "AVD", value: "91%" }],
   },
   {
-    title: "Split-Screen Format",
+    title: "Question Ai Native Ad Integration",
     thumbnail: "https://img.youtube.com/vi/mMdEhSK1g-Q/hq720.jpg",
     videoUrl: "https://www.youtube.com/watch?v=mMdEhSK1g-Q",
     metrics: [{ label: "Views", value: "9.1M" }, { label: "Retention", value: "76.7%" }, { label: "AVD", value: "109%" }],
@@ -76,7 +76,7 @@ const cases: CaseData[] = [
     metrics: [{ label: "Views", value: "4.4M" }, { label: "Retention", value: "69%" }, { label: "AVD", value: "98.5%" }],
   },
   {
-    title: "3D Viral Video",
+    title: "BlockBlast Native Ad Integration",
     thumbnail: "https://img.youtube.com/vi/1jsP3E_eg2w/hq720.jpg",
     videoUrl: "https://www.youtube.com/watch?v=1jsP3E_eg2w",
     metrics: [{ label: "Views", value: "6.4M" }],

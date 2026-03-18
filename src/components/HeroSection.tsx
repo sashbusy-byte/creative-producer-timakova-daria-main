@@ -107,15 +107,15 @@ export const HeroSection = () => (
             <div className="mt-6 text-left w-full max-w-[360px] md:max-w-[480px]">
               <p className="text-foreground text-base min-[430px]:text-lg md:text-xl leading-relaxed mb-4">
                 <span className="font-bold uppercase">СДЕЛАЛА ЭТО НА ГЛАЗАХ У ВСЕЙ КОМАНДЫ И НЕ ПОКРАСНЕЛА…</span>{" "}
-                сократила время на продакшн на <span className="text-glow-green font-bold">25%</span> с помощью AI и Data-Driven подхода.
+                оптимизировала продакшен на <span className="text-glow-green font-bold">25%</span>, внедрив AI-инструменты и Data-Driven подход.
               </p>
               <p className="text-foreground text-base min-[430px]:text-lg md:text-xl leading-relaxed mb-4">
-                Теперь мои проекты собирают до{" "}
+                Мои креативы собирают до{" "}
                 <span className="text-glow-blue font-bold">183&nbsp;000&nbsp;000</span>{" "}
                 просмотров чистой органики.
               </p>
               <p className="text-foreground text-base min-[430px]:text-lg md:text-xl leading-relaxed mb-0">
-                Живу созданием вирального контента и знаю всё о «крючках».
+                Горю созданием перформанс-креативов и безотказных хуков.
               </p>
             </div>
           </div>
