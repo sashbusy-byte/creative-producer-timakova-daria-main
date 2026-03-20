@@ -344,24 +344,33 @@ export function GameAdPopup() {
                 style={{
                   width: "100%",
                   padding: "16px 20px",
-                  background: "linear-gradient(135deg, #FFD700 0%, #FF8C00 50%, #FF4500 100%)",
-                  border: "none",
+                  background: "linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(142 76% 28%) 100%)",
+                  border: "1px solid hsl(142 76% 56% / 0.4)",
                   borderRadius: "12px",
                   cursor: "pointer",
-                  fontFamily: "'Impact', 'Arial Black', sans-serif",
-                  fontSize: "22px",
-                  fontWeight: 900,
-                  color: "#000",
+                  fontFamily: "'Inter', 'Arial', sans-serif",
+                  fontSize: "18px",
+                  fontWeight: 800,
+                  color: "#fff",
                   letterSpacing: "2px",
                   textTransform: "uppercase",
-                  boxShadow: "0 6px 30px rgba(255,165,0,0.55), 0 0 60px rgba(255,100,0,0.25), inset 0 1px 0 rgba(255,255,255,0.3)",
+                  boxShadow: "0 6px 30px hsl(142 76% 36% / 0.5), 0 0 60px hsl(142 76% 36% / 0.2), inset 0 1px 0 rgba(255,255,255,0.15)",
                   animation: showCTA ? "ctaPulse 0.85s ease-in-out infinite" : "none",
                   position: "relative",
                   overflow: "hidden",
                   marginBottom: "20px",
+                  backdropFilter: "blur(8px)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "linear-gradient(135deg, hsl(142 76% 42%) 0%, hsl(142 76% 34%) 100%)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(142 76% 28%) 100%)";
                 }}
               >
-                <span style={{ position: "relative", zIndex: 1 }}>🎮 ADD TO TEAM!</span>
+                <span style={{ position: "relative", zIndex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px" }}>
+                  🎮 ADD TO TEAM
+                </span>
                 {showCTA && (
                   <span
                     style={{

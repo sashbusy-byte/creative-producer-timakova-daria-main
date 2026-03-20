@@ -19,7 +19,7 @@ const cases: CaseData[] = [
     title: "PolyBuzz Native Ad Integration",
     thumbnail: "https://img.youtube.com/vi/5O84BAbkfTE/hq720.jpg",
     videoUrl: "https://www.youtube.com/watch?v=5O84BAbkfTE",
-    metrics: [{ label: "Views", value: "59M" }, { label: "Retention", value: "78%" }, { label: "AVD", value: "110%" }],
+    metrics: [{ label: "CTR", value: "17%" }, { label: "Views", value: "59M" }, { label: "Retention", value: "78%" }, { label: "AVD", value: "110%" }],
   },
   {
     title: "Split-Screen - Most Viewed Video",

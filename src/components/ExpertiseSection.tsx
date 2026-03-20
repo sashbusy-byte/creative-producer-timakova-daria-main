@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useLang } from "@/lib/lang";
 
 const sectionAnim = {
   hidden: { opacity: 0, y: 20 },
@@ -7,105 +8,113 @@ const sectionAnim = {
 
 type Pill = { label: string };
 
-const groups: Array<{
-  title: string;
-  subtitle: string;
-  accent: "green" | "blue";
-  pills: Pill[];
-}> = [
+const groupsRu: Array<{ title: string; accent: "green" | "blue"; pills: Pill[] }> = [
   {
-    title: "Аналитика и Стратегия",
-    subtitle: "От метрик к решениям для UA и контента",
+    title: "Analytics",
     accent: "green",
     pills: [
-      { label: "Market Analysis" },
-      { label: "CPI" },
-      { label: "CTR" },
-      { label: "Retention" },
-      { label: "ROAS" },
-      { label: "Viral Strategy" },
-      { label: "Content Deconstruction" },
-      { label: "Game Mechanics" },
+      { label: "Facebook Ad Library" },
+      { label: "YouTube Analytics" },
+      { label: "Viewstats" },
+      { label: "VidIQ" },
+      { label: "AppMagic" },
+      { label: "Sensor Tower" },
+      { label: "Trend Hunting" },
     ],
   },
   {
-    title: "AI и Стек",
-    subtitle: "Инструменты, ускоряющие продакшн и итерации",
+    title: "AI & Stack",
     accent: "blue",
     pills: [
-      { label: "Gemini / ChatGPT" },
-      { label: "Midjourney" },
+      { label: "Gemini" },
+      { label: "Nano Banana" },
+      { label: "Sora" },
+      { label: "Veo3" },
       { label: "Suno" },
       { label: "ElevenLabs" },
-      { label: "Adobe Premiere Pro" },
+      { label: "Zonos" },
+      { label: "Antigravity" },
+      { label: "Midjourney" },
+      { label: "Adobe Premier Pro" },
+      { label: "Photoshop" },
       { label: "Figma" },
+      { label: "Canva" },
+      { label: "Blender" },
     ],
   },
   {
-    title: "Продакшн и управление",
-    subtitle: "Full-cycle и коммуникация между командами",
+    title: "Management",
     accent: "green",
     pills: [
-      { label: "Full-cycle Management" },
-      { label: "Bridge-communication" },
-      { label: "Emotional Storytelling" },
+      { label: "Google Project Management" },
+      { label: "Agile" },
+      { label: "Scrum" },
+      { label: "Jira" },
+      { label: "Miro" },
+      { label: "Asana" },
+      { label: "Google Workspace" },
     ],
   },
 ];
+
+// Groups are the same in EN (all labels are already in English)
+const groupsEn = groupsRu;
 
 const pillClasses = (accent: "green" | "blue") =>
   accent === "green"
     ? "bg-primary/10 text-primary border-primary/20 hover:bg-primary/15"
     : "bg-accent/10 text-accent border-accent/20 hover:bg-accent/15";
 
-export const ExpertiseSection = () => (
-  <section className="py-12 md:py-20">
-    <div className="container max-w-5xl mx-auto">
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={sectionAnim}
-        className="mb-12 max-w-3xl"
-      >
-        <p className="text-accent font-mono-data text-sm mb-2 tracking-widest uppercase">Expertise</p>
-        <h2 className="text-3xl md:text-5xl font-black mb-4 md:mb-8">
-          Expertise &amp; <span className="text-glow-green">Stack</span>
-        </h2>
-      </motion.div>
+export const ExpertiseSection = () => {
+  const { lang } = useLang();
+  const groups = lang === "ru" ? groupsRu : groupsEn;
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {groups.map((g, i) => (
-          <motion.div
-            key={g.title}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={sectionAnim}
-            transition={{ delay: 0.08 + i * 0.08 }}
-            className="glass-card p-7"
-          >
-            <div className="mb-5">
-              <p className="text-foreground font-bold text-lg">{g.title}</p>
-              <p className="text-muted-foreground text-sm mt-1">{g.subtitle}</p>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {g.pills.map((p) => (
-                <span
-                  key={p.label}
-                  className={[
-                    "inline-flex items-center min-h-11 px-3 rounded-full border text-sm font-mono-data transition-colors select-none",
-                    pillClasses(g.accent),
-                  ].join(" ")}
-                >
-                  {p.label}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        ))}
+  return (
+    <section className="py-12 md:py-20">
+      <div className="container max-w-5xl mx-auto">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sectionAnim}
+          className="mb-12 max-w-3xl"
+        >
+          <h2 className="text-3xl md:text-5xl font-black mb-4 md:mb-8">
+            Skills &amp; <span className="text-glow-green">Stack</span>
+          </h2>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {groups.map((g, i) => (
+            <motion.div
+              key={g.title}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={sectionAnim}
+              transition={{ delay: 0.08 + i * 0.08 }}
+              className="glass-card p-7"
+            >
+              <div className="mb-5">
+                <p className="text-foreground font-bold text-lg">{g.title}</p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {g.pills.map((p) => (
+                  <span
+                    key={p.label}
+                    className={[
+                      "inline-flex items-center min-h-11 px-3 rounded-full border text-sm font-mono-data transition-colors select-none",
+                      pillClasses(g.accent),
+                    ].join(" ")}
+                  >
+                    {p.label}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
-
+    </section>
+  );
+};

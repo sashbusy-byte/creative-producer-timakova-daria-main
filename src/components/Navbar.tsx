@@ -1,10 +1,19 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
+import { useLang } from "@/lib/lang";
 
-const navItems = [
+const navItemsRu = [
+  { label: "Шоурил", href: "#showreel" },
+  { label: "Кейс", href: "#analysis" },
+  { label: "AI & Workflow", href: "#workflow" },
+  { label: "Экспертиза", href: "#expertise" },
+  { label: "Контакты", href: "#contacts" },
+];
+
+const navItemsEn = [
   { label: "Showreel", href: "#showreel" },
-  { label: "Analysis", href: "#analysis" },
+  { label: "Case Study", href: "#analysis" },
   { label: "AI & Workflow", href: "#workflow" },
   { label: "Expertise", href: "#expertise" },
   { label: "Contacts", href: "#contacts" },
@@ -13,6 +22,8 @@ const navItems = [
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { lang, toggle } = useLang();
+  const navItems = lang === "ru" ? navItemsRu : navItemsEn;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -20,7 +31,6 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close menu on resize to desktop
   useEffect(() => {
     const onResize = () => { if (window.innerWidth >= 768) setMobileOpen(false); };
     window.addEventListener("resize", onResize);
@@ -52,16 +62,35 @@ export const Navbar = () => {
               {item.label}
             </a>
           ))}
+          {/* Language toggle */}
+          <button
+            onClick={toggle}
+            className="flex items-center gap-1.5 text-sm font-mono-data font-bold px-3 py-1 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-colors"
+            aria-label="Switch language"
+          >
+            <Globe className="w-3.5 h-3.5" />
+            <span>{lang === "ru" ? "EN" : "RU"}</span>
+          </button>
         </div>
 
-        {/* Mobile burger */}
-        <button
-          onClick={() => setMobileOpen((v) => !v)}
-          className="md:hidden h-11 w-11 inline-flex items-center justify-center text-foreground"
-          aria-label={mobileOpen ? "Закрыть меню" : "Открыть меню"}
-        >
-          {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        {/* Mobile right side */}
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            onClick={toggle}
+            className="flex items-center gap-1.5 text-xs font-mono-data font-bold px-2.5 py-1 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-colors"
+            aria-label="Switch language"
+          >
+            <Globe className="w-3 h-3" />
+            <span>{lang === "ru" ? "EN" : "RU"}</span>
+          </button>
+          <button
+            onClick={() => setMobileOpen((v) => !v)}
+            className="h-11 w-11 inline-flex items-center justify-center text-foreground"
+            aria-label={mobileOpen ? "Закрыть меню" : "Открыть меню"}
+          >
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile dropdown */}

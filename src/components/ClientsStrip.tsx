@@ -3,6 +3,7 @@ import logoPolybuzz from "@/assets/logo-polybuzz.jpg";
 import logoBlockblast from "@/assets/logo-blockblast.png";
 import logoQuestionai from "@/assets/logo-questionai.webp";
 import logoFacemoji from "@/assets/logo-facemoji.png";
+import logoPartner6 from "@/assets/partner6.jpg";
 
 const clients = [
   { name: "BlockBlast", logo: logoBlockblast, className: "w-[72px] h-[72px] min-[430px]:w-20 min-[430px]:h-20 md:w-24 md:h-24" },
@@ -10,6 +11,7 @@ const clients = [
   { name: "Question AI", logo: logoQuestionai, className: "w-[72px] h-[72px] min-[430px]:w-20 min-[430px]:h-20 md:w-24 md:h-24" },
   { name: "FaceMoji", logo: logoFacemoji, className: "w-[72px] h-[72px] min-[430px]:w-20 min-[430px]:h-20 md:w-24 md:h-24" },
   { name: "FishAudio", logo: "/fish-audio-logo.png", className: "w-[72px] h-[72px] min-[430px]:w-20 min-[430px]:h-20 md:w-24 md:h-24" },
+  { name: "Partner 6", logo: logoPartner6, className: "w-[72px] h-[72px] min-[430px]:w-20 min-[430px]:h-20 md:w-24 md:h-24" },
 ];
 
 export const ClientsStrip = () => (
