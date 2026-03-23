@@ -3,8 +3,8 @@ import { MacOSWindow } from "./MacOSWindow";
 import { Copy, FileText, Linkedin, Mail, Send } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { useLang } from "@/lib/lang";
-import cvPdfRu from "@/assets/CV_Daria_Timakova_Creative_Producer_RU.pdf";
-import cvPdfEn from "@/assets/CV_Daria_Timakova_Creative_Producer_ENG.pdf";
+import cvPdfRu from "@/assets/CV_Daria_Timakova_Creative_Producer_RU (3).pdf";
+import cvPdfEn from "@/assets/CV_Daria_Timakova_Creative_Producer_ENG (2).pdf";
 
 async function copyToClipboard(value: string) {
   try {
@@ -32,8 +32,8 @@ export const ContactSection = () => {
   const { lang } = useLang();
   const cvFile = lang === "ru" ? cvPdfRu : cvPdfEn;
   const cvFilename = lang === "ru" 
-    ? "CV_Daria_Timakova_Creative_Producer_RU.pdf" 
-    : "CV_Daria_Timakova_Creative_Producer_ENG.pdf";
+    ? "CV_Daria_Timakova_Creative_Producer_RU (3).pdf" 
+    : "CV_Daria_Timakova_Creative_Producer_ENG (2).pdf";
 
   return (
     <section className="py-12 md:py-20">
